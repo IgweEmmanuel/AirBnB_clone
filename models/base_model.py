@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-A BaseModel class that defines all common attributes/methods for other classes
+This is a BaseModel class that defines all common attributes or methods for other classes
 """
 import uuid
 from datetime import datetime
@@ -45,7 +45,7 @@ class BaseModel:
         """
         returns a dictionary containing all keys/values of __dict__ of the instance
         """
-        di = self.__dict__
+        di = self.__dict__.copy()
         di["created_at"] = self.created_at.isoformat()
         di["updated_at"] = self.updated_at.isoformat()
         di["__class__"] = self.__class__.__name__
