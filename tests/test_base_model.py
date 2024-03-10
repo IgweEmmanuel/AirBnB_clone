@@ -8,7 +8,7 @@ class TestBaseModel(TestCase):
         bm1 = BaseModel()
         bm2 = BaseModel()
 
-        self.assertTrue(hasattr(bm1, "id")
+        self.assertTrue(hasattr(bm1, "id"))
         self.assertNotEquals(bm1, bm2)
         self.assertIsInstance(UUID(bm1.id), UUID)
         self.assertIsInstance(bm1.id, str)

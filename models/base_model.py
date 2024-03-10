@@ -12,13 +12,11 @@ class BaseModel:
     """
 
 
-
     def __init__(self, **kwargs):
         """
         This is where all the attributes will be defined
         """
         if kwargs:
-            for key, value in kwargs.items():
                 self.id = kwargs.get("id")
                 self.created_at = datetime.fromisoformat(kwargs.get("created_at"))
                 self.updated_at = datetime.fromisoformat(kwargs.get("updated_at"))
@@ -41,6 +39,7 @@ class BaseModel:
         updates the public updated_at attribute
         """
         self.updated_at = datetime.now()
+        models.storage.save()
 
     def to_dict(self):
         """
